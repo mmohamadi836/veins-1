@@ -24,6 +24,7 @@ import org.car2x.veins.base.connectionManager.ConnectionManager;
 import org.car2x.veins.base.modules.BaseWorldUtility;
 import org.car2x.veins.modules.mobility.traci.TraCIScenarioManager*;
 import org.car2x.veins.modules.obstacle.ObstacleControl;
+import org.car2x.veins.modules.obstacle.VehicleObstacleControl;
 import org.car2x.veins.modules.world.annotations.AnnotationManager;
 import org.car2x.veins.nodes.Car;
 
@@ -35,6 +36,9 @@ network Scenario
         double playgroundSizeZ @unit(m); // z size of the area the nodes are in (in meters)
         @display("bgb=$playgroundSizeX,$playgroundSizeY");
     submodules:
+        vehicleObstacles: VehicleObstacleControl {
+            @display("p=220,50");
+        }
         obstacles: ObstacleControl {
             @display("p=240,50");
         }
